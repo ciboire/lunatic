@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <meta name="robots" content="index, follow" />
+  <title>Products: <%= controller.action_name %></title>
+  
+  <!-- Stylesheets -->
+  <%= stylesheet_link_tag 'scaffold' %>
+  <%= stylesheet_link_tag 'lunatic' %>
+  <!--[if IE 6]>
+      <script type="text/javascript" src="javascripts/unitpngfix.js"></script>
+  	<link href="css/ie6.css" rel="stylesheet" type="text/css" />
+  <![endif]-->
+
+  <!-- Javascript -->
+  <%= javascript_include_tag 'jquery' %>
+  <%= javascript_include_tag 'slider' %>
+  <%= javascript_include_tag 'jquery.scrollable' %>
+  <%= javascript_include_tag 'jquery.mousewheel' %>
+  <script type="text/javascript" >
+  	$(function() {
+  		$("#scrollable").scrollable({horizontal:true,size: 4});
+  	});
+  </script>
+</head>
+<body>
+
+<% if ['show', 'store'].include?(session[:section]) %>
+  <div id="container">
+  	<div id="centercolumn">
+
+  	<!-- BEGIN HEADER -->
+  		<div id="header">
+  			<div id="topmenu">
+  				<div id="menu">
+  					<ul>
+  						<li id="home"><a href="index.html">Store</a></li>
+  						<li><a href="product_description.html">FAQ</a></li>
+  						<li><a href="#">Checkout</a></li>
+  					</ul>
+  				</div><!-- end menu -->
+  				<div id="cart">
+  				<a href="shopping_cart.html"><img src="images/cart.png" alt="" class="imgleft" /></a>Now in your cart <strong>0 Item</strong>				</div>
+  				<!-- end cart -->
+  			</div><!-- end topmenu -->
+  			<div id="top">
+  				<div id="logo">
+  				  <a href="index.html"><img src="images/logo.png" alt="" /></a>
+  				  <span class="dude"><%= image_tag('lunatic.png') %></span>
+  				</div><!-- end logo -->
+  			</div><!-- end top -->
+  		</div>
+  	<!-- END OF HEADER -->
+
+  	<div class="clr"></div><!-- clear float -->
+
+  	<!-- BEGIN CONTENT -->
+  		<div id="content">
+  			<div id="c_top">
+  				<div id="c_bottom">
+
+  				<!-- begin slider -->
+  					<div id="slide">
+  						<div id="scrollable"> 
+  							<a class="prev"></a>
+  							<a class="next"></a>   
+  							<div class="items"> 
+  								<div class="slide-items">
+  									<h4>Camcorder #023</h4>
+  									<img src="images/slide1.jpg" alt="" />
+  								</div>
+  								<div class="slide-items">
+  									<h4>Printer #013</h4>
+  									<img src="images/slide2.jpg" alt="" />
+  								</div>
+  								<div class="slide-items">
+  									<h4>Monitor #018</h4>
+  									<img src="images/slide3.jpg" alt="" />
+  								</div>
+  								<div class="slide-items noborder">
+  									<h4>Digital Camera #09</h4>
+  									<img src="images/slide4.jpg" alt="" />
+  								</div>
+  								<div class="slide-items">
+  									<h4>Camcorder #023</h4>
+  									<img src="images/slide2.jpg" alt="" />
+  								</div>
+  								<div class="slide-items">
+  									<h4>Printer #013</h4>
+  									<img src="images/slide3.jpg" alt="" />
+  								</div>
+  								<div class="slide-items">
+  									<h4>Monitor #018</h4>
+  									<img src="images/slide1.jpg" alt="" />
+  								</div>
+  								<div class="slide-items noborder">
+  									<h4>Digital Camera #09</h4>
+  									<img src="images/slide4.jpg" alt="" />
+  								</div>
+  								<div style="clear: both;"></div>
+  							</div> 
+  						</div><!--end scrollable-->
+  					</div>
+  				<!-- end slider -->
+
+  					<br style="clear:both;"  />
+
+  					<div id="maincontent">
+
+  						<div id="main">
+
+<%= yield %>
+
+				<div id="side">
+					<div class="sidebox">
+						<div class="sidebox_t">
+						<div class="sidebox_b">
+							<h2>Categories</h2>
+							<div class="padbox_side">
+								<ul>
+									<li><a href="category.html">USB</a></li>
+									<li><a href="category.html">Keyboard</a></li>
+									<li><a href="category.html">Memory</a></li>
+									<li><a href="category.html">Mice</a></li>
+									<li><a href="category.html">Laptops</a></li>
+									<li><a href="category.html">Video Cards</a></li>
+									<li><a href="category.html">Major Brands</a></li>
+									<li><a href="category.html">Networking</a></li>
+									<li><a href="category.html">Popular Models</a></li>
+									<li><a href="category.html">Desktops</a></li>
+									<li><a href="category.html">VGA</a></li>
+									<li><a href="category.html">Monitor</a></li>
+									<li><a href="category.html">Mouse</a></li>
+								</ul>
+							</div>
+						</div>
+						</div>
+					</div><!-- end sidebox -->
+					<div class="sidebox2">
+					<img src="images/free_shipping.gif" alt="" />
+					</div><!-- end sidebox2 -->
+					<div class="sidebox">
+						<div class="sidebox_t">
+						<div class="sidebox_b">
+							<div class="padbox_side">
+							<h4>Product #012</h4><br />
+							<p><img src="images/special.jpg" alt="" class="imgcenter" /></p>
+							<p><a href="product_description.html"><img src="images/but_detail.gif" alt="" class="imgright" /></a><span class="price"> $230.00</span></p>
+							<span class="strip"><img src="images/strip.gif" alt="" /></span>
+							</div>
+						</div>
+						</div>
+					</div><!-- end sidebox -->
+				</div><!-- end side -->
+				
+				<div class="clr"></div><!-- clear float -->
+			</div><!-- end main -->
+		
+		</div><!-- end maincontent -->
+	</div><!-- end c_bottom -->
+</div><!-- end c_top -->
+</div>
+<!-- END OF CONTENT -->
+
+
+<!-- BEGIN FOOTER -->
+<div id="footer">
+<div id="footleft">Copyright &copy;2009 rgbstore. All Rights Reserved&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">Privacy Policy</a></div>
+<div id="footlright"><img src="images/credit_card.gif" alt="" /></div>
+</div>
+<!-- END OF FOOTER -->
+
+</div><!-- end of centercolumn -->
+</div><!-- end of container -->
+
+<% else %>
+
+  <div style="margin: 20px;color:#fff;font-size:1.4em;line-height:1.4em">
+
+    <%= yield %>
+    
+  </div>
+  
+<% end %>
+
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+/* 
+
+rgbstore - CSS File
+
+USE THIS STYLE SHEET EXCLUSIVELY FOR WEB COMPANY IE6
+
+*/
+.imgleft{float:left; padding-right:8px;}
+.imgright{float:right; padding-left:8px;}
+#container{height:82%;}
+#c_bottom{height:450px;}
+.proList ul li{padding:18px 0px 10px 0px;}
+.catlist ul li{padding:18px 0px 0px 0px;}
+.row ul li{float:left; padding:0px 0px; margin:0px;}
+.thumb{margin:0 auto 10px auto; text-align:center; padding:0px 0px 0px 25px; border-bottom:solid 1px #dedede;}

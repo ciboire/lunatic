@@ -1,0 +1,32 @@
+<h1 style="color:#fad30d;">Penguin Store (for penguin eyes only!)</h1>
+
+<p style="color: green"><%= flash[:notice] %></p>
+
+<table style="width:100%">
+  <tr>
+    <th style="text-align: left">Category</th>
+    <th style="text-align:left">Title</th>
+    <th style="text-align:left">Photo</th>
+    <th style="text-align: left">Description</th>
+    <th style="text-align: left">Price</th>
+  </tr>
+  <tr><td>&nbsp;</td></tr>
+
+<% @products.each do |product| %>
+  <tr>
+    <td><%=h product.category %></td>
+    <td><%=h product.title %></td>
+    <td><% if product.photo_file_name %> <%= image_tag product.photo.url(:thumb) %> <% else %> (none) <% end %></td>
+    <td><%=h product.description %></td>
+    <td><%=h product.price %></td>
+    <td><%= link_to 'Show', :action => :show, :id => product.id %></td>
+    <td><%= link_to 'Edit', :action => :edit, :id => product.id %></td>
+    <td><%= link_to 'Destroy', :action => :destroy, :id => product.id, :confirm => 'Are you sure?' %></td>
+  </tr>
+  <tr> <td colspan=8><div style="border-bottom: 1px solid #888888;margin-bottom:17px">&nbsp;</div></td></tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New product', :action => :new %>

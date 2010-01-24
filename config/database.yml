@@ -12,9 +12,7 @@ development:
   adapter: postgresql
   encoding: unicode
   database: lunatic_development
-  pool: 5
-  username: lunatic
-  password:
+
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -38,14 +36,9 @@ test:
   adapter: postgresql
   encoding: unicode
   database: lunatic_test
-  pool: 5
-  username: lunatic
-  password:
+
 
 production:
   adapter: postgresql
   encoding: unicode
-  database: lunatic_production
-  pool: 5
-  username: lunatic
-  password:
+  database: lunatic

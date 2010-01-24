@@ -1,0 +1,37 @@
+<h1 style="color:#fad30d;">Change the product.  Note that to change / add photo, you need to create a whole new product.</h1>
+
+<% form_for @product, :url => { :action => "update" }, :html => { :multipart => true } do |f| %>
+  <%= f.error_messages %>
+
+  <p style="color:#fff">
+    <%= f.label :category, "Category" %><br />
+    <span style="text-align:left"><%= f.select :category, Product.all.collect {|u| ["#{u.category}", u.category]}.uniq,
+    :selected => @product.category %></span>
+  
+      &nbsp; (or just specify a new one: &nbsp;<%= text_field_tag 'alternate' %>)
+  </p>
+  <p style="color:#fff">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p style="color:#fff">
+    <%= f.label :description %><br />
+    <%= f.text_area :description, :size => "100x15" %>
+  </p>
+  <p style="color:#fff">
+    <b>Photo:</b>
+    <% if @product.photo_file_name %> <%= image_tag @product.photo.url(:medium) %> <% else %> 
+    None (must create a new product to change / add photo). <% end %>
+  </p>
+  
+  <p style="color:#fff">
+    <%= f.label :price %><br />
+    <%= f.text_field :price %>
+  </p>
+  <p>
+    <%= hidden_field_tag :id, @product.id %>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', :action => 'index' %>

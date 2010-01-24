@@ -32,8 +32,30 @@ Rails::Initializer.run do |config|
   # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
 
   # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
-  # Run "rake -D time" for a list of tasks for finding time zone names.
-  config.time_zone = 'UTC'
+   # Run "rake -D time" for a list of tasks for finding time zone names.
+   config.time_zone = 'Pacific Time (US & Canada)'
+
+   # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
+   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
+   # config.i18n.default_locale = :de
+
+   # Authentication
+   config.gem "clearance",
+     :lib     => 'clearance',
+     :source  => 'http://gemcutter.org',
+     :version => '0.8.5'
+
+   # Pagination
+   #config.gem 'mislav-will_paginate', :lib => 'will_paginate', :source => 'http://gems.github.com'
+
+   # Authentication
+   DO_NOT_REPLY = "do-not-reply@lunaticsales.com"
+
+   # controller session
+   config.action_controller.session = {
+     :session_key => 'lunaticsales',
+     :secret      => '64cfc78d08968d86c9e4c7c1f2249a1e0f811ef3686af5290cabc4cd70741fb82e8f07cb563d4be31b7d51958d8c5dbed6ea9d9e78d66bfee8b025a87da5d31'
+   }
 
   # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]

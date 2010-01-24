@@ -1,0 +1,94 @@
+/* 
+
+rgbstore- CSS File
+
+*/
+
+.c_inner{background-image:url(../images/c_inner_repeat.gif); background-repeat:repeat-y; width:696px;}
+.c_inner_t{background-image:url(../images/c_inner_top.gif); background-repeat:no-repeat; background-position:top;  width:696px;}
+.c_inner_b{background-image:url(../images/c_inner_bottom.gif); background-repeat:no-repeat; background-position:bottom;  width:696px;}
+
+/*** SHOPPING CART & CATEGORY ***/
+#breadcrumb{background-image:url(../images/dotted.gif); background-repeat:repeat-x; background-position:bottom; padding:0px 0px 8px 0px}
+#breadcrumb a, #breadcrumb a:visited{color:#707070; text-decoration:none;}
+#breadcrumb a:hover{text-decoration:underline;}
+.headings{
+	padding:4px 0px 0px 10px;
+	margin:0px 0px 0px 0px;
+	color:#a97606;
+	font-size:14px; font-weight:bold !important;
+	background-image:url(../images/heading_yellow.gif); background-repeat:no-repeat; height:26px; width:661px;
+}
+
+.headings ul, .proList ul{margin:0px; padding:0px; list-style-type:none;}
+.headings ul li{
+	float:left;
+	list-style-type:none;
+	color:#a97606;
+	text-align:center;
+	font-size:14px;
+}
+
+.headings ul li.priview, .proList ul li.priview {width:310px; padding-left:5px; text-align:left;}
+.headings ul li.quantity, .proList ul li.quantity {width:56px;}
+.headings ul li.priceHead, .proList ul li.priceHead {width:100px;}
+.headings ul li.total, .proList ul li.total {width:85px; font-weight:bold;}
+.headings ul li.remove, .proList ul li.remove {width:100px;}
+
+.headings ul li.prodname{width:455px; text-align:left;}
+
+.proList {
+	padding:0px 0px 0px 10px;
+	margin:0px 0px 0px 0px;
+	border-bottom:solid 1px #dedede ;
+	width:661px;
+}
+
+.proList a, .proList a:visited{color:#707070;}
+.proList ul li {
+	float:left;
+	list-style-type:none;
+	text-align:center;
+	padding:18px 0px 18px 0px;
+	font-size:12px;
+}
+
+.proList ul li.quantity input{border:solid 1px;}
+.subtotal, .checkout{width:671px;}
+.subtotal ul, .checkout ul, .catlist ul{list-style-type:none; padding:0px; margin:0px;}
+.subtotal ul li, .checkout ul li{list-style-type:none; padding:10px 0px; margin:0px; text-align:right; font-weight:bold;}
+.catlist{
+	padding:0px 0px 0px 10px;
+	margin:0px 0px 0px 0px;
+	border-bottom:solid 1px #dedede ;
+	width:661px;
+}
+
+.catlist ul li {
+	float:left;
+	list-style-type:none;
+	text-align:center;
+	padding:18px 0px 18px 0px;
+	font-size:12px;
+}
+
+.catlist ul li.prodname{width:455px; text-align:left;}
+.catlist ul li.priceHead {width:103px;}
+.catlist ul li.buy {width:103px;}
+
+.pagenumber{padding:8px 0px 0px 0px; text-align:right;}
+span.display{float:left;}
+
+/**/
+#description{}
+#product_image{width:240px; float:left; padding:0px 0px 0px 10px;}
+#product_description{width:380px; float:left; padding:0px 0px 0px 40px;}
+.title_description{font-weight:bold; font-size:16px; font-family:Tahoma; border-bottom: solid 1px #dedede; padding-bottom:0px; margin-bottom:10px;}
+.title_description h2{margin-bottom:0px; padding-bottom:10px;}
+.thumb{margin:0 auto 10px auto; text-align:center; padding:0px 0px 20px 25px; border-bottom:solid 1px #dedede;}
+.row{border:solid 1px #fff; padding:2px 0px;}
+.row ul{margin:0px; padding:0px; list-style-type:none;}
+.row ul li{float:left; padding:2px 0px; margin:0px; display:inline;}
+.row ul li.col1{font-weight:bold; width:20%}
+.row ul li.col2{font-weight:bold; width:auto}
+
