@@ -28,7 +28,6 @@
 </head>
 <body>
 
-<% if ['show', 'store'].include?(session[:section]) %>
   <div id="container">
   	<div id="centercolumn">
 
@@ -37,18 +36,24 @@
   			<div id="topmenu">
   				<div id="menu">
   					<ul>
-  						<li id="home"><a href="index.html">Store</a></li>
-  						<li><a href="product_description.html">FAQ</a></li>
-  						<li><a href="#">Checkout</a></li>
+  						<li id="home"><%= link_to "Store", :action => :store -%></li>
+  						<li><a href="/faq">FAQ</a></li>
   					</ul>
   				</div><!-- end menu -->
   				<div id="cart">
-  				<a href="shopping_cart.html"><img src="images/cart.png" alt="" class="imgleft" /></a>Now in your cart <strong>0 Item</strong>				</div>
+  				  <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+            ">
+            <input type="image" src="http://megahomework.com/images/but_checkout.png" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+            <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+            </form>
+          </div>
   				<!-- end cart -->
   			</div><!-- end topmenu -->
   			<div id="top">
   				<div id="logo">
-  				  <a href="index.html"><img src="images/logo.png" alt="" /></a>
+  				  <a href="index.html"><img src="/images/logo.png" alt="" /></a>
   				  <span class="dude"><%= image_tag('lunatic.png') %></span>
   				</div><!-- end logo -->
   			</div><!-- end top -->
@@ -62,58 +67,54 @@
   			<div id="c_top">
   				<div id="c_bottom">
 
+<% if !['index', 'edit', 'new'].include?(session[:section]) %>
   				<!-- begin slider -->
   					<div id="slide">
   						<div id="scrollable"> 
   							<a class="prev"></a>
   							<a class="next"></a>   
-  							<div class="items"> 
-  								<div class="slide-items">
-  									<h4>Camcorder #023</h4>
-  									<img src="images/slide1.jpg" alt="" />
-  								</div>
-  								<div class="slide-items">
-  									<h4>Printer #013</h4>
-  									<img src="images/slide2.jpg" alt="" />
-  								</div>
-  								<div class="slide-items">
-  									<h4>Monitor #018</h4>
-  									<img src="images/slide3.jpg" alt="" />
-  								</div>
-  								<div class="slide-items noborder">
-  									<h4>Digital Camera #09</h4>
-  									<img src="images/slide4.jpg" alt="" />
-  								</div>
-  								<div class="slide-items">
-  									<h4>Camcorder #023</h4>
-  									<img src="images/slide2.jpg" alt="" />
-  								</div>
-  								<div class="slide-items">
-  									<h4>Printer #013</h4>
-  									<img src="images/slide3.jpg" alt="" />
-  								</div>
-  								<div class="slide-items">
-  									<h4>Monitor #018</h4>
-  									<img src="images/slide1.jpg" alt="" />
-  								</div>
-  								<div class="slide-items noborder">
-  									<h4>Digital Camera #09</h4>
-  									<img src="images/slide4.jpg" alt="" />
-  								</div>
+  							<div class="items">
+  							  <% Product.find_all_by_is_showcased(true).each do |product| %>
+  							    <% rowcycle = cycle("1", "2", "3", "4") %>
+  							    <% if rowcycle == "4" %>
+  							      <div class="slide-items noborder">
+  							    <% else %>
+  							      <div class="slide-items">
+  							    <% end %>
+  							      <h4><%= number_to_currency(product.price) -%></h4>
+  							      <% if product.photo_file_name %> <%= image_tag product.photo.url(:small) %> <% end %>
+  							    </div>
+  							  <% end %>
+  						
   								<div style="clear: both;"></div>
   							</div> 
   						</div><!--end scrollable-->
   					</div>
   				<!-- end slider -->
+  				
+  <% end %>
 
   					<br style="clear:both;"  />
 
   					<div id="maincontent">
 
   						<div id="main">
+  						  
+  						  <% if flash[:failure] %>  
+                  <p style="color: #ff0000;font-size:1.5em;border:1px solid #ff0000;padding:20px"><%= flash[:failure] %></p>
+                <% end %>
 
-<%= yield %>
+                <% if flash[:success] %>  
+                  <p style="color: #00ff00;font-size:1.5em;border:1px solid #00ff00;padding:20px"><%= flash[:success] %></p>
+                <% end %>
 
+                <% if flash[:notice] %>  
+                  <p style="color: #ffff00;font-size:1.5em;border:1px solid #ffff00;padding:20px"><%= flash[:notice] %></p>
+                <% end %>
+
+                <%= yield %>
+
+<% if !['index', 'edit', 'new'].include?(session[:section]) %>
 				<div id="side">
 					<div class="sidebox">
 						<div class="sidebox_t">
@@ -121,40 +122,41 @@
 							<h2>Categories</h2>
 							<div class="padbox_side">
 								<ul>
-									<li><a href="category.html">USB</a></li>
-									<li><a href="category.html">Keyboard</a></li>
-									<li><a href="category.html">Memory</a></li>
-									<li><a href="category.html">Mice</a></li>
-									<li><a href="category.html">Laptops</a></li>
-									<li><a href="category.html">Video Cards</a></li>
-									<li><a href="category.html">Major Brands</a></li>
-									<li><a href="category.html">Networking</a></li>
-									<li><a href="category.html">Popular Models</a></li>
-									<li><a href="category.html">Desktops</a></li>
-									<li><a href="category.html">VGA</a></li>
-									<li><a href="category.html">Monitor</a></li>
-									<li><a href="category.html">Mouse</a></li>
+								  <% @categories.each do |category| %>
+								    <li><%= link_to category, "/products/#{category}" %></li>
+							    <% end %>
 								</ul>
 							</div>
 						</div>
 						</div>
 					</div><!-- end sidebox -->
 					<div class="sidebox2">
-					<img src="images/free_shipping.gif" alt="" />
+					<img src="/images/refund.png" alt="" />
 					</div><!-- end sidebox2 -->
 					<div class="sidebox">
 						<div class="sidebox_t">
 						<div class="sidebox_b">
 							<div class="padbox_side">
-							<h4>Product #012</h4><br />
-							<p><img src="images/special.jpg" alt="" class="imgcenter" /></p>
-							<p><a href="product_description.html"><img src="images/but_detail.gif" alt="" class="imgright" /></a><span class="price"> $230.00</span></p>
-							<span class="strip"><img src="images/strip.gif" alt="" /></span>
+							<% if @product_hot %>
+							  <h4><%= @product_hot.title -%></h4><br />
+							    <p>
+							      <% if @product_hot.photo_file_name %> 
+							        <%= image_tag @product_hot.photo.url(:small), :class => "imgcenter" %> 
+							      <% end %>
+							    </p>
+							    <p>
+							    <%= link_to(image_tag("but_detail.gif", :class => "imgright"), "/product/#{@product_hot.id}") %>
+							    <span class="price"><%= number_to_currency(@product_hot.price) -%></span>
+							  </p>
+							<% end %>
+							<span class="strip"><img src="/images/strip.gif" alt="" /></span>
 							</div>
 						</div>
 						</div>
 					</div><!-- end sidebox -->
 				</div><!-- end side -->
+				
+	<% end %>
 				
 				<div class="clr"></div><!-- clear float -->
 			</div><!-- end main -->
@@ -168,23 +170,16 @@
 
 <!-- BEGIN FOOTER -->
 <div id="footer">
-<div id="footleft">Copyright &copy;2009 rgbstore. All Rights Reserved&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">Privacy Policy</a></div>
-<div id="footlright"><img src="images/credit_card.gif" alt="" /></div>
+<div id="footleft">Copyright &copy;2010 J Sandoval, LLC. All Rights Reserved&nbsp;&nbsp;|&nbsp;&nbsp;
+  <%= link_to "Terms of Use / Privacy", "/tos.html", {:popup => true} -%> &nbsp;&nbsp;|&nbsp;&nbsp;
+  <%= link_to "Contact Us", "mailto:support@lunaticsales.com" -%></div>
+<div id="footlright"><img src="/images/credit_card.gif" alt="" /></div>
 </div>
 <!-- END OF FOOTER -->
 
 </div><!-- end of centercolumn -->
 </div><!-- end of container -->
 
-<% else %>
-
-  <div style="margin: 20px;color:#fff;font-size:1.4em;line-height:1.4em">
-
-    <%= yield %>
-    
-  </div>
-  
-<% end %>
 
 
 </body>

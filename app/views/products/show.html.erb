@@ -1,23 +1,48 @@
-<p>
-  <b>Title:</b>
-  <%=h @product.title %>
-</p>
+<div id="mainleft">
+	<div class="c_inner">
+		<div class="c_inner_t">
+			<div class="c_inner_b">
+	<div class="pad_content_inner">
+	
+		<div id="breadcrumb"><%= link_to "< Back", url_for(:back) %></div>
+		<br /><br />
+		<div id="description">
+		  <div class="title_description" style="padding-bottom:10px"><h2><%= @product.title %></h2></div>
+			<div id="product_image" style="margin-bottom: 20px">
+			  <% if @product.photo_file_name %> <%= image_tag @product.photo.url(:large) %> <% else %> (none) <% end %>
+			  <div class="clr"></div>
+			</div>
+			<div id="product_description">
+			  <br />
+				<p style="font-size:1.2em"><%= @product.description %></p>
+			</div>
+		
+		  <div style="width:400px">
+			  <div style="float:left"><h3>Today's price: <%= number_to_currency(@product.price) -%></h3></div>
+			  <div style="float:right;margin-left:40px">
+          <form name="_xclick" target="paypal" action="https://www.paypal.com/cgi-bin/webscrs" method="post">
+          <input type="hidden" name="cmd" value="_cart">
+          <input type="hidden" name="business" value="">
+          <input type="hidden" name="currency_code" value="USD">
+          <input type="hidden" name="amount" <%= "value=\"#{@product.price}\"" -%>>
+          <input type="hidden" name="item_name" <%= "value=\"#{@product.title}\"" -%>>
+          <input type="hidden" name="item_number" <%= "value=\"#{@product.id}\"" -%>>
+          <input type="hidden" name="business" value="admin@jsandovalllc.com">
+          <input type="image" src="http://megahomework.com/images/but_addcart.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+          <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+          <input type="hidden" name="add" value="1">
+          </form>
+			  </div>
+			</div>
+			<br /><br />
+		  <p>Tax and shipping / handling included in price.<br />
+		    Return <b>unused</b> within 30 days for refund (not including S&amp;H).</p>
 
-<p>
-  <b>Description:</b>
-  <%=h @product.description %>
-</p>
-
-<p>
-  <b>Image:</b>
-  <% if @product.photo_file_name %> <%= image_tag @product.photo.url(:small) %> <% end %>
-</p>
-
-<p>
-  <b>Price:</b>
-  <%=h @product.price %>
-</p>
-
-
-<%= link_to 'Edit', :action => :edit, :id => @product.id %> |
-<%= link_to 'Back', :action => :index %>
+			</div><!-- end description -->
+			<div class="clr"></div><!-- clear float -->
+			
+			</div><!-- end pad_content_inner -->
+			</div>
+		</div>
+	</div>
+</div><!-- end mainleft -->

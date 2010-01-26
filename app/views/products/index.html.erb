@@ -1,13 +1,11 @@
-<h1 style="color:#fad30d;">Penguin Store (for penguin eyes only!)</h1>
-
-<p style="color: green"><%= flash[:notice] %></p>
+<h1 style="color:#fad30d;margin-bottom:40px">Penguin Store (for penguin eyes only!)</h1>
 
 <table style="width:100%">
-  <tr>
+  <tr style="text-decoration:underline">
     <th style="text-align: left">Category</th>
     <th style="text-align:left">Title</th>
     <th style="text-align:left">Photo</th>
-    <th style="text-align: left">Description</th>
+    <th style="text-align: left">Brief description</th>
     <th style="text-align: left">Price</th>
   </tr>
   <tr><td>&nbsp;</td></tr>
@@ -17,7 +15,7 @@
     <td><%=h product.category %></td>
     <td><%=h product.title %></td>
     <td><% if product.photo_file_name %> <%= image_tag product.photo.url(:thumb) %> <% else %> (none) <% end %></td>
-    <td><%=h product.description %></td>
+    <td><%=h product.description_short %></td>
     <td><%=h product.price %></td>
     <td><%= link_to 'Show', :action => :show, :id => product.id %></td>
     <td><%= link_to 'Edit', :action => :edit, :id => product.id %></td>

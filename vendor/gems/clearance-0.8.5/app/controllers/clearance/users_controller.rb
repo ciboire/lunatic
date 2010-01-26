@@ -11,7 +11,7 @@ class Clearance::UsersController < ApplicationController
 
   def create
     @user = ::User.new params[:user]
-    if @user.email == 'admin@vegaphysics.com' && @user.save
+    if @user.email == 'admin@jsandovalllc.com' && @user.save
       flash_notice_after_create
       redirect_to(url_after_create)
     else

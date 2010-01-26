@@ -1,10 +1,14 @@
 class ProductsController < ApplicationController
   #before_filter :authenticate, :only => [:index]
-  
+  before_filter "get_categories"
+  before_filter "get_product_hot"
+
 
   # Main page
   def store
     session[:section] = 'store'
+    @products = Product.paginate :page => params[:page], :per_page => 6, :order => 'title ASC',
+      :conditions => {:category => session[:category]}
   end
 
   # Product details
@@ -39,8 +43,8 @@ class ProductsController < ApplicationController
     end
 
     if @product.save
-      flash[:notice] = 'Product was successfully created.'
-      redirect_to :action => "show", :id => @product.id
+      flash[:success] = 'Product was successfully created.'
+      redirect_to :action => :index
     else
       render :action => :new
     end
@@ -51,7 +55,7 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     
     if @product.update_attributes(params[:product])
-      flash[:notice] = 'Product was successfully updated.'
+      flash[:success] = 'Product was successfully updated.'
       redirect_to :action => :index
     else
       render :action => :edit
@@ -64,6 +68,24 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @product.destroy
 
-    redirect_to :action => :edit
+    redirect_to :action => :index
+  end
+  
+  
+  private
+  
+  def get_categories
+    @categories = Product.find(:all, :order => 'category ASC').map{|u| u.category}.uniq
+    session[:category] = params[:category] ? params[:category] : 
+        (@categories.include?(session[:category]) ? session[:category] : @categories[0])
+  end
+  
+  def get_product_hot
+    @products_hot = Product.find_all_by_is_hot(true)
+    if @products_hot.size == 0
+      @product_hot = Product.find(:first)
+    else
+      @product_hot = @products_hot[0]
+    end
   end
 end

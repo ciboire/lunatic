@@ -14,7 +14,6 @@ ActionController::Routing::Routes.draw do |map|
   map.connect 'update', :controller => :products, :action => :update
   map.connect 'destroy/:id', :controller => :products, :action => :destroy
   
-  
   Clearance::Routes.draw(map)
   
 end
