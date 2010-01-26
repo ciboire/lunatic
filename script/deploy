@@ -1,0 +1,1 @@
+ssh lunaticsales.com 'cd ~/lunatic && git pull -q && RAILS_ENV=production rake db:migrate && rm -f log/*.log && thin restart -p 3030 -e production --servers 1'
