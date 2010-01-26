@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  #before_filter :authenticate, :only => [:index]
+  before_filter :authenticate, :only => [:index, :new, :edit, :create, :update, :destroy]
   before_filter "get_categories"
   before_filter "get_product_hot"
 
