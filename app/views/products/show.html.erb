@@ -20,8 +20,9 @@
 		  <div style="width:400px">
 			  <div style="float:left"><h3>Today's price: <%= number_to_currency(@product.price) -%></h3></div>
 			  <div style="float:right;margin-left:40px">
-          <form name="_xclick" target="paypal" action="https://www.paypal.com/cgi-bin/webscrs" method="post" target="_self">
+          <form name="_xclick" target="_self" action="https://www.paypal.com/cgi-bin/webscrs" method="post">
           <input type="hidden" name="cmd" value="_cart">
+          <input type="hidden" name="shopping_url" value="http://www.lunaticsales.com">
           <input type="hidden" name="currency_code" value="USD">
           <input type="hidden" name="amount" <%= "value=\"#{@product.price}\"" -%>>
           <input type="hidden" name="item_name" <%= "value=\"#{@product.title}\"" -%>>
