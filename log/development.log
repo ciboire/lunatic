@@ -19612,3 +19612,62 @@ Rendering template within layouts/products
 Rendering products/store
   [4;36;1mProduct Load (0.8ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products"."is_showcased" = 't') [0m
 Completed in 92ms (View: 70, DB: 5) | 200 OK [http://127.0.0.1/]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ProductsController#store (for 127.0.0.1 at 2010-01-31 16:04:48) [GET]
+  [4;36;1mProduct Load (333.9ms)[0m   [0;1mSELECT * FROM "products" ORDER BY category ASC[0m
+  [4;35;1mProduct Load (0.6ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."is_hot" = 't') [0m
+  [4;36;1mProduct Load (16.5ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products"."category" = E'xxx') ORDER BY title ASC LIMIT 6 OFFSET 0[0m
+Rendering template within layouts/products
+Rendering products/store
+  [4;35;1mProduct Load (1.3ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."is_showcased" = 't') [0m
+Completed in 689ms (View: 146, DB: 353) | 200 OK [http://127.0.0.1/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2010-01-31 16:04:59) [GET]
+Redirected to http://127.0.0.1:3000/sign_in
+Filter chain halted as [:authenticate] rendered_or_redirected.
+Completed in 18ms (DB: 0) | 302 Found [http://127.0.0.1/penguin]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2010-01-31 16:04:59) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering sessions/new
+Completed in 21ms (View: 19, DB: 0) | 200 OK [http://127.0.0.1/sign_in]
+  [4;36;1mSQL (4.4ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing Clearance::SessionsController#create (for 127.0.0.1 at 2010-01-31 16:05:22) [POST]
+  Parameters: {"commit"=>"Sign in", "session"=>{"password"=>"[FILTERED]", "email"=>"admin@jsandovalllc.com"}, "action"=>"create", "authenticity_token"=>"q3JwGzw1vZbTKwGUW8qM6iAaoI63387JI1AWHH/5TGI=", "controller"=>"clearance/sessions"}
+  [4;36;1mUser Load (40.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = E'admin@jsandovalllc.com') LIMIT 1[0m
+Rendering sessions/new (unauthorized)
+Completed in 83ms (View: 8, DB: 45) | 401 Unauthorized [http://127.0.0.1/session]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing Clearance::SessionsController#create (for 127.0.0.1 at 2010-01-31 16:05:35) [POST]
+  Parameters: {"commit"=>"Sign in", "session"=>{"password"=>"[FILTERED]", "email"=>"admin@jsandovalllc.com"}, "action"=>"create", "authenticity_token"=>"q3JwGzw1vZbTKwGUW8qM6iAaoI63387JI1AWHH/5TGI=", "controller"=>"clearance/sessions"}
+  [4;35;1mUser Load (1.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."email" = E'admin@jsandovalllc.com') LIMIT 1[0m
+Rendering sessions/new (unauthorized)
+Completed in 22ms (View: 7, DB: 2) | 401 Unauthorized [http://127.0.0.1/session]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ProductsController#show (for 127.0.0.1 at 2010-01-31 16:05:48) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mProduct Load (2.6ms)[0m   [0;1mSELECT * FROM "products" ORDER BY category ASC[0m
+  [4;35;1mProduct Load (0.5ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."is_hot" = 't') [0m
+  [4;36;1mProduct Load (15.0ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products"."id" = 1) [0m
+Rendering template within layouts/products
+Rendering products/show
+  [4;35;1mProduct Load (0.5ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."is_showcased" = 't') [0m
+Completed in 59ms (View: 25, DB: 19) | 200 OK [http://127.0.0.1/product/1]
