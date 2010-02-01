@@ -21,7 +21,7 @@
             <div class="pad_box">
               <h2 class="prod_title"><%= h product.title -%></h2>
               <% if product.photo_file_name %> 
-                <%= image_tag product.photo.url(:small), :class => "imgcenter" -%>
+                <%= image_tag product.photo.url(:medium), :class => "imgcenter" -%>
               <% end %>
               <p><%= product.description_short -%></p>
               <p><span class="price"><%= number_to_currency(product.price) -%></span></p>
