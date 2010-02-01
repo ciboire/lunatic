@@ -81,7 +81,9 @@
   							      <div class="slide-items">
   							    <% end %>
   							      <h4><%= number_to_currency(product.price) -%></h4>
-  							      <% if product.photo_file_name %> <%= image_tag product.photo.url(:small) %> <% end %>
+  							      <% if product.photo_file_name %> 
+  							        <%= link_to(image_tag(product.photo.url(:small)), "/product/#{product.id}") %>
+  							      <% end %>
   							    </div>
   							  <% end %>
   						
