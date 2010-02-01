@@ -19671,3 +19671,101 @@ Rendering template within layouts/products
 Rendering products/show
   [4;35;1mProduct Load (0.5ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."is_showcased" = 't') [0m
 Completed in 59ms (View: 25, DB: 19) | 200 OK [http://127.0.0.1/product/1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ProductsController#store (for 127.0.0.1 at 2010-01-31 16:27:53) [GET]
+  [4;36;1mProduct Load (2.8ms)[0m   [0;1mSELECT * FROM "products" ORDER BY category ASC[0m
+  [4;35;1mProduct Load (0.5ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."is_hot" = 't') [0m
+  [4;36;1mProduct Load (0.8ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products"."category" = E'xxx') ORDER BY title ASC LIMIT 6 OFFSET 0[0m
+Rendering template within layouts/products
+Rendering products/store
+  [4;35;1mProduct Load (0.5ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."is_showcased" = 't') [0m
+Completed in 53ms (View: 34, DB: 5) | 200 OK [http://127.0.0.1/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ProductsController#store (for 127.0.0.1 at 2010-01-31 16:27:56) [GET]
+  Parameters: {"category"=>"store"}
+  [4;36;1mProduct Load (2.6ms)[0m   [0;1mSELECT * FROM "products" ORDER BY category ASC[0m
+  [4;35;1mProduct Load (0.5ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."is_hot" = 't') [0m
+  [4;36;1mProduct Load (0.7ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products"."category" = E'store') ORDER BY title ASC LIMIT 6 OFFSET 0[0m
+Rendering template within layouts/products
+Rendering products/store
+  [4;35;1mProduct Load (0.4ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."is_showcased" = 't') [0m
+Completed in 28ms (View: 10, DB: 4) | 200 OK [http://127.0.0.1/products/store]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ProductsController#store (for 127.0.0.1 at 2010-01-31 16:27:59) [GET]
+  [4;36;1mProduct Load (2.6ms)[0m   [0;1mSELECT * FROM "products" ORDER BY category ASC[0m
+  [4;35;1mProduct Load (0.5ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."is_hot" = 't') [0m
+  [4;36;1mProduct Load (0.8ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products"."category" = E'xxx') ORDER BY title ASC LIMIT 6 OFFSET 0[0m
+Rendering template within layouts/products
+Rendering products/store
+  [4;35;1mProduct Load (0.5ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."is_showcased" = 't') [0m
+Completed in 31ms (View: 12, DB: 5) | 200 OK [http://127.0.0.1/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ProductsController#store (for 127.0.0.1 at 2010-01-31 16:28:03) [GET]
+  Parameters: {"category"=>"store"}
+  [4;36;1mProduct Load (2.8ms)[0m   [0;1mSELECT * FROM "products" ORDER BY category ASC[0m
+  [4;35;1mProduct Load (0.6ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."is_hot" = 't') [0m
+  [4;36;1mProduct Load (0.9ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products"."category" = E'store') ORDER BY title ASC LIMIT 6 OFFSET 0[0m
+Rendering template within layouts/products
+Rendering products/store
+  [4;35;1mProduct Load (0.5ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."is_showcased" = 't') [0m
+Completed in 33ms (View: 11, DB: 5) | 200 OK [http://127.0.0.1/products/store]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ProductsController#store (for 127.0.0.1 at 2010-01-31 16:28:05) [GET]
+  [4;36;1mProduct Load (2.8ms)[0m   [0;1mSELECT * FROM "products" ORDER BY category ASC[0m
+  [4;35;1mProduct Load (0.5ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."is_hot" = 't') [0m
+  [4;36;1mProduct Load (0.7ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products"."category" = E'xxx') ORDER BY title ASC LIMIT 6 OFFSET 0[0m
+Rendering template within layouts/products
+Rendering products/store
+  [4;35;1mProduct Load (0.4ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."is_showcased" = 't') [0m
+Completed in 31ms (View: 12, DB: 5) | 200 OK [http://127.0.0.1/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ProductsController#store (for 127.0.0.1 at 2010-01-31 16:28:08) [GET]
+  [4;36;1mProduct Load (2.7ms)[0m   [0;1mSELECT * FROM "products" ORDER BY category ASC[0m
+  [4;35;1mProduct Load (0.6ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."is_hot" = 't') [0m
+  [4;36;1mProduct Load (0.9ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products"."category" = E'xxx') ORDER BY title ASC LIMIT 6 OFFSET 0[0m
+Rendering template within layouts/products
+Rendering products/store
+  [4;35;1mProduct Load (0.5ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."is_showcased" = 't') [0m
+Completed in 117ms (View: 12, DB: 5) | 200 OK [http://127.0.0.1/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ProductsController#store (for 127.0.0.1 at 2010-01-31 16:29:58) [GET]
+  [4;36;1mProduct Load (2.6ms)[0m   [0;1mSELECT * FROM "products" ORDER BY category ASC[0m
+  [4;35;1mProduct Load (0.5ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."is_hot" = 't') [0m
+  [4;36;1mProduct Load (0.7ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products"."category" = E'xxx') ORDER BY title ASC LIMIT 6 OFFSET 0[0m
+Rendering template within layouts/products
+Rendering products/store
+  [4;35;1mProduct Load (0.5ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."is_showcased" = 't') [0m
+Completed in 73ms (View: 54, DB: 5) | 200 OK [http://127.0.0.1/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ProductsController#store (for 127.0.0.1 at 2010-01-31 16:30:01) [GET]
+  [4;36;1mProduct Load (2.6ms)[0m   [0;1mSELECT * FROM "products" ORDER BY category ASC[0m
+  [4;35;1mProduct Load (0.5ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."is_hot" = 't') [0m
+  [4;36;1mProduct Load (0.8ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products"."category" = E'xxx') ORDER BY title ASC LIMIT 6 OFFSET 0[0m
+Rendering template within layouts/products
+Rendering products/store
+  [4;35;1mProduct Load (0.5ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."is_showcased" = 't') [0m
+Completed in 66ms (View: 14, DB: 5) | 200 OK [http://127.0.0.1/]
