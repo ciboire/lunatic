@@ -55,6 +55,10 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     
     if @product.update_attributes(params[:product])
+      if params[:alternate] != ''
+        @product.category = params[:alternate]
+        @product.save
+      end
       flash[:success] = 'Product was successfully updated.'
       redirect_to :action => :index
     else
